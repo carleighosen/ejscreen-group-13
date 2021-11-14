@@ -12,6 +12,7 @@ library(tidyverse)
 library(janitor)
 library(here)
 library(ggplot2)
+library(hexbin)
 ```
 
 ```{r}
@@ -20,10 +21,13 @@ library(ggplot2)
 ces <- read_csv(here("data", "ces3demographics.csv")) %>% 
   clean_names()
 ```
+
 ```{r}
 # Create basic graph
 ggplot(data = ces, aes(x = white_percent,
                         y = ces_3_0_score)) +
-  geom_point(color = "darkorange")
+  geom_hex(color = "darkorange") +
+  labs(x = "White Population (%)",
+       y = "CalEnviroScreen 3.0 Score")
 ```
 
