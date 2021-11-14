@@ -15,21 +15,24 @@ library(ggplot2)
 library(hexbin)
 ```
 
-```{r}
+```{r, warning = FALSE, message = FALSE}
 # Read in the data
 
 ces <- read_csv(here("data", "ces3demographics.csv")) %>% 
   clean_names()
 ```
 
-```{r}
+```{r, warning = FALSE, message = FALSE}
 # Create basic graph
 ggplot(data = ces, aes(x = white_percent,
                         y = ces_3_0_score)) +
   geom_hex(color = "palevioletred2") +
-  labs(x = "White Population (%)",
+  labs(x = "White Population (% of total population)",
        y = "CalEnviroScreen 3.0 Score") +
   scale_fill_gradient(low = "seagreen1", high = "black") +
-  theme_minimal()
+  theme_minimal() +
+  theme(plot.caption = element_text(hjust = 0.02)) # Adjust caption placement
+  
 ```
 
+**Figure 1:** Comparison of CalEnviroScreen 3.0 Score with the percentage of white population in each census track. Darker hexagons represent a greater number of census tracks that fall under a particular CalEnviroScreen Score and percentage of population that is white.
