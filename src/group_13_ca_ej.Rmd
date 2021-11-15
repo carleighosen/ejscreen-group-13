@@ -36,3 +36,10 @@ ggplot(data = ces, aes(x = white_percent,
 ```
 
 **Figure 1:** Comparison of CalEnviroScreen 3.0 Score with the percentage of white population in each census track. Darker hexagons represent a greater number of census tracks that fall under a particular CalEnviroScreen Score and percentage of population that is white.
+
+The overall trend that is observed is that the higher the Caucasian population is in a community, the lower the CalEnviroScreen score is. The data is also skewed to the left.
+
+Citation: 
+Eng, Tiffany. CalEnviroScreen 3.0
+
+U.S. Census. 2010. California. 
